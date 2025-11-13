@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quer recomeçar?</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+<script>
+  // bloqueia retorno ao início caso ela tenha escolhido "não"
+  if (localStorage.getItem("resposta") === "nao") {
+    window.location.href = "nao.html";
+  }
+</script>
+
+<main class="page" id="page">
+  <div class="header-icon">❤️</div>
+
+  <h2>Você gostaria de recomeçar comigo<br />de um jeito mais leve, sério e verdadeiro?</h2>
+
+  <p>
+    Eu sei que palavras não bastam. Por isso quero mostrar, com calma e com atitude,
+    que posso fazer diferente.
+  </p>
+
+  <div class="actions">
+    <button class="btn btn-primary" id="btn-sim">
+      Sim, eu quero recomeçar
+    </button>
+
+    <button class="btn btn-ghost" id="btn-nao">
+      Não, prefiro não continuar
+    </button>
+  </div>
+
+  <div class="media-wrapper">
+    <img src="heart_pulse.gif" alt="Coração pulsando" />
+  </div>
+
+  <div class="small">
+    (Se você disser "sim", eu prometo cuidar melhor de tudo isso.)
+  </div>
+</main>
+
+<script>
+  const page = document.getElementById("page");
+  const btnSim = document.getElementById("btn-sim");
+  const btnNao = document.getElementById("btn-nao");
+
+  btnSim.addEventListener("click", () => {
+    // envia email automático
+    fetch("/api/sim").catch(() => {});
+    
+    // animação de saída
+    page.classList.add("exit");
+
+    setTimeout(() => {
+      window.location.href = "sim.html";
+    }, 260);
+  });
+
+  btnNao.addEventListener("click", () => {
+    // salva a decisão no localStorage
+    localStorage.setItem("resposta", "nao");
+
+    // envia email automático
+    fetch("/api/nao").catch(() => {});
+
+    // animação de saída
+    page.classList.add("exit");
+
+    setTimeout(() => {
+      window.location.href = "nao.html";
+    }, 260);
+  });
+</script>
+
+</body>
+</html>

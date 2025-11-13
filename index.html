@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Uma última carta</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="page" id="page">
+    <div class="header-icon">💌</div>
+    <h1>Uma última carta...</h1>
+
+    <p>
+      Depois de tudo o que aconteceu, eu só queria abrir meu coração.
+    </p>
+    <p>
+      Se você ainda tiver vontade, eu gostaria de recomeçar com você.
+      Prometo fazer diferente — corrigir os erros que te fizeram duvidar
+      do que eu sinto.
+    </p>
+    <p>
+      Se o seu coração ainda permitir... será que a gente tenta de novo?
+    </p>
+
+    <div class="actions">
+      <button class="btn btn-primary" id="btn-next">
+        Continuar →
+      </button>
+    </div>
+
+    <div class="small">
+      (Esta é só uma página simples, mas tudo aqui é muito sincero.)
+    </div>
+  </main>
+
+  <script>
+    const btnNext = document.getElementById('btn-next');
+    const page = document.getElementById('page');
+
+    btnNext.addEventListener('click', () => {
+      page.classList.add('exit');
+      setTimeout(() => {
+        window.location.href = 'escolha.html';
+      }, 260);
+    });
+  </script>
+</body>
+</html>

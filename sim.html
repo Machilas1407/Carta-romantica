@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pra te mostrar que eu quero mudar</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+<script>
+  // se ela disse NÃO, não pode voltar
+  if (localStorage.getItem("resposta") === "nao") {
+    window.location.href = "nao.html";
+  }
+</script>
+
+<main class="page">
+  <div class="header-icon">🎥</div>
+
+  <h1>Pra te mostrar que eu quero mudar…</h1>
+
+  <p>
+    Eu pensei muito antes de fazer isso.  
+    E, para provar que quero fazer tudo de um jeito novo, eu gravei esse vídeo.
+  </p>
+
+  <p>
+    Assiste com calma. E, se você sentir no coração que vale a pena,
+    eu tô pronto pra recomeçar do jeito certo.
+  </p>
+
+  <div class="video-wrapper">
+    <!-- TROQUE PELO ID DO SEU VÍDEO DO YOUTUBE -->
+    <iframe
+      src="https://www.youtube.com/embed/SEU_VIDEO_ID"
+      title="Vídeo especial pra você"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen
+    ></iframe>
+  </div>
+
+  <div class="small">
+    (Se você chegou até aqui, já significa muito pra mim.)
+  </div>
+</main>
+
+</body>
+</html>
